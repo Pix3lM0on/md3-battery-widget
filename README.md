@@ -29,7 +29,8 @@ Opening the settings shows two tabs, **Appearance** and **Devices**.
   - Devices are shown from Macro Deck 3's battery catalogue
 
 ## Requirements
-- Macro Deck 3.0.4
+- Macro Deck 3.0.4 or newer
+- 64-bit x86 Linux (`linux-x64`)
 
 ## Install
 
