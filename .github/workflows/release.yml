@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: battery-widget-release
@@ -36,6 +37,7 @@ jobs:
           if gh release view "$tag" >/dev/null 2>&1; then
             exit 0
           fi
+          notes="Requires Macro Deck 3.0.4 or newer on 64-bit Linux. In Macro Deck, install the attached plugin from file, then add Battery Overview to your deck."
           gh release create "$tag" "artifacts/dev.neon.battery-widget-${version}.macroDeckPlugin" \
-            --target "$GITHUB_SHA" --title "Battery Widget ${version}" \
-            --notes "Requires Macro Deck 3.0.4 or newer on 64-bit Linux. In Macro Deck, install the attached plugin from file, then add Battery Overview to your deck."
+            --target "$GITHUB_SHA" --title "Battery Widget ${version}" --notes "$notes"
+          gh workflow run macro-deck-release.yml --ref "$tag" -f "changelog=$notes"
