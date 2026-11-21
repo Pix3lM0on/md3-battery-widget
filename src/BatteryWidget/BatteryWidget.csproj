@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <Version>1.0.0</Version>
+    <RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="MacroDeck.Plugin.Analyzers" Version="3.0.4" PrivateAssets="all" />
+    <Compile Include="../BluetoothBattery/WidgetRingOptions.cs" Link="Shared/WidgetRingOptions.cs" />
+    <Compile Include="../BluetoothBattery/WidgetColorOptions.cs" Link="Shared/WidgetColorOptions.cs" />
+    <PackageReference Include="MacroDeck.Plugin.Hosting" Version="3.0.4" />
+    <Content Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets/icon.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

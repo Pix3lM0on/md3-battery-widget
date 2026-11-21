@@ -23,7 +23,7 @@ No. Check it and see!
 ### Option 1. From the store (button above)
 
 ### Option 2. From the releases
-1. Download the latest release from the [releases]
+1. Download the latest release from the [releases](https://github.com/Pix3lM0on/md3-battery-widget/releases)
 2. Open Macro Deck 3 > Integrations > Add > Install from file...
 3. Select the downloaded file and press install!
 

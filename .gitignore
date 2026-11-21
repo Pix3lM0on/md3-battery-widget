@@ -1,0 +1,4 @@
+**/bin/
+**/obj/
+.macrodeck-dev-state/
+artifacts/staging/

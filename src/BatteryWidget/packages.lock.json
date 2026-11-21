@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0": {
+      "MacroDeck.Plugin.Analyzers": {
+        "type": "Direct",
+        "requested": "[3.0.4, )",
+        "resolved": "3.0.4",
+        "contentHash": "+GygwOaakfupjM2c8lyvLBTA55KSqBY9vFhO6NvWctPfXyWTneIlYlxXl76mMYxilSzb8fjWikcZf0MqFauTpg=="
+      },
+      "MacroDeck.Plugin.Hosting": {
+        "type": "Direct",
+        "requested": "[3.0.4, )",
+        "resolved": "3.0.4",
+        "contentHash": "35MZM9CPYKfIgE0UBVRcwesrts2Tj3YGSYxIetxDHJaq2sN4utXPYlOqQsb6PKPHG4eMs06RF2lCDaX4ddr5qw==",
+        "dependencies": {
+          "MacroDeck.Localization": "3.0.4",
+          "MacroDeck.Plugin.Protocol": "3.0.4",
+          "MacroDeck.Sdk": "3.0.4",
+          "MacroDeck.Ui": "3.0.4",
+          "Serilog": "4.4.0"
+        }
+      },
+      "MacroDeck.Localization": {
+        "type": "Transitive",
+        "resolved": "3.0.4",
+        "contentHash": "7JysqFC8Zbu1rmJZaXnglgjlrtdIBbI4EB11ZbWWVtbavkSf6OM4vJTC7/hdJElp9s7/bttED1ZeHCJ7LYA6Kg=="
+      },
+      "MacroDeck.Plugin.Protocol": {
+        "type": "Transitive",
+        "resolved": "3.0.4",
+        "contentHash": "w7uWBPLo7vryNhdGsgAN4ybMyl6nvljCP7uxnBpoIfgSnY5P9ua1bPtuq4yLI3ZuQs529Sf8zaU/XHCKJjOr0w==",
+        "dependencies": {
+          "MacroDeck.Sdk": "3.0.4",
+          "Serilog": "4.4.0"
+        }
+      },
+      "MacroDeck.Sdk": {
+        "type": "Transitive",
+        "resolved": "3.0.4",
+        "contentHash": "fhNR3hI8unrisqJNhxe2DYT3egdYE1ikW6X2hP6zF+Gb5eSpdYmErlFCkwV1vqbyGv0XXsZ8TH6bAMtXuixb4w==",
+        "dependencies": {
+          "MacroDeck.Localization": "3.0.4",
+          "MacroDeck.Ui.Model": "3.0.4",
+          "Serilog": "4.4.0"
+        }
+      },
+      "MacroDeck.Ui": {
+        "type": "Transitive",
+        "resolved": "3.0.4",
+        "contentHash": "R/FBaKNRZTo0Z54OSGvwt71NFZhzrk7afzNoK/t6vXKvUC1o52Hti7OdybuOS+Xygf7DOIX+Kci0ySrDufToRg==",
+        "dependencies": {
+          "MacroDeck.Localization": "3.0.4",
+          "MacroDeck.Ui.Model": "3.0.4"
+        }
+      },
+      "MacroDeck.Ui.Model": {
+        "type": "Transitive",
+        "resolved": "3.0.4",
+        "contentHash": "8IuEzvOYmZ63+tkcRwGWtmZmoqg4S0Qg4XmZu1ekPAd0mxoSZDM49UzZDxCWfSAzFfXUulgfTvaUHaNvJdIrqA=="
+      },
+      "Serilog": {
+        "type": "Transitive",
+        "resolved": "4.4.0",
+        "contentHash": "ZC6Le3rr4TVJJjS4KsQAesxeF1EhW9qcZmmG7eP5Y2G3+gTGkJEUXkq4+tZNPtyp05I0wWOxnIjwtxFweJsObw=="
+      }
+    },
+    "net10.0/linux-x64": {}
+  }
+}

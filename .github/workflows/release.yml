@@ -1,0 +1,41 @@
+name: Release Battery Widget
+
+on:
+  push:
+    branches: [main]
+    paths: [src/BatteryWidget/manifest.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: battery-widget-release
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Build and validate the plugin
+        run: |
+          version="$(jq -er .version src/BatteryWidget/manifest.json)"
+          dotnet tool restore
+          dotnet restore src/BatteryWidget/BatteryWidget.csproj --locked-mode
+          dotnet macrodeck-plugin build --source src/BatteryWidget --output artifacts
+          dotnet macrodeck-plugin validate --artifact "artifacts/dev.neon.battery-widget-${version}.macroDeckPlugin"
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(jq -er .version src/BatteryWidget/manifest.json)"
+          tag="v${version}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            exit 0
+          fi
+          gh release create "$tag" "artifacts/dev.neon.battery-widget-${version}.macroDeckPlugin" \
+            --target "$GITHUB_SHA" --title "Battery Widget ${version}" \
+            --notes "Requires Macro Deck 3.0.4 or newer on 64-bit Linux. In Macro Deck, install the attached plugin from file, then add Battery Overview to your deck."
