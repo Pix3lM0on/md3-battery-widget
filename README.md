@@ -4,7 +4,7 @@ This widget shows your battery! (...if that wasn't obvious from the name)
 <a href="https://macro-deck.app/store/dev.neon.battery-widget">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://assets.macro-deck.app/branding/Open%20in%20the%20Macro%20Deck%20Store%20Badge%20Dark.png">
-    <img alt="Open in the Macro Deck Store" src="https://assets.macro-deck.app/branding/Open%20in%20the%20Macro%20Deck%20Store%20Badge%20Light.png" height="128">
+    <img alt="Open in the Macro Deck Store" src="https://assets.macro-deck.app/branding/Open%20in%20the%20Macro%20Deck%20Store%20Badge%20Light.png" height="56">
   </picture>
 </a>
 
@@ -12,11 +12,21 @@ This widget shows your battery! (...if that wasn't obvious from the name)
 
 Opening the settings shows two tabs, **Appearance** and **Devices**.
 - In **Appearance** you can change how it looks
+  - Circles!
+    - Gauge mode - the thing where you can make it a half circle (180°) or slightly more full circle (270°)
+    - Thickness of the circle
+    - Rounded ends in gauge mode
+  - You can show or hide different settings like
+    - Device name (also if it shows in the circle or under)
+    - Percentage (also if it shows in the circle or under)
+  - And colors!
+    - For different battery levels (for now only low/medium/high and their tresholds)
+    - When a device reports chargin mode
+    - Color of the icon
+    - Color of the name
+    - Color of the percentage
 - In **Devices** you can change what it shows
-
-"But tell us more about it"
-
-No. Check it and see!
+  - Devices are shown from Macro Deck 3's battery catalogue
 
 ## Requirements
 - Macro Deck 3.0.4
