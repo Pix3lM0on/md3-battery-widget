@@ -22,3 +22,23 @@ jobs:
       source: src/BatteryWidget
       cli-version: '3.0.4'
       changelog: ${{ github.event.release.body || inputs.changelog || '' }}
+      upload-artifact: true
+      artifact-name: battery-widget-package
+
+  attach-package:
+    needs: publish
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Download the package from the trusted build
+        uses: actions/download-artifact@v4
+        with:
+          name: battery-widget-package
+          path: package
+      - name: Attach the package to the GitHub release
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release upload "$RELEASE_TAG" package/*.macroDeckPlugin
