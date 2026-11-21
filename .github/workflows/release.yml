@@ -27,6 +27,11 @@ jobs:
           if gh release view "$tag" >/dev/null 2>&1; then
             exit 0
           fi
+          release_notes=(--generate-notes)
+          if [[ "$tag" == "v1.0.3" ]]; then
+            release_notes=(--notes "First release!")
+          fi
           gh release create "$tag" \
-            --target "$GITHUB_SHA" --title "Battery Widget ${version}" --notes "First release!"
-          gh workflow run macro-deck-release.yml --ref "$tag" -f "changelog=First release!"
+            --target "$GITHUB_SHA" --title "Battery Widget ${version}" "${release_notes[@]}"
+          changelog="$(gh release view "$tag" --json body --jq .body)"
+          gh workflow run macro-deck-release.yml --ref "$tag" -f "changelog=$changelog"
