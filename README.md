@@ -18,6 +18,9 @@ Opening the settings shows two tabs, **Appearance** and **Devices**.
 
 No. Check it and see!
 
+## Requirements
+- Macro Deck 3.0.4
+
 ## Install
 
 ### Option 1. From the store (button above)
